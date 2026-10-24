@@ -1,0 +1,34 @@
+{
+  "name": "@aleksandardukic/sketchy-drawer",
+  "version": "1.0.0",
+  "description": "library that utilizes canvas to draw sketchy-like shapes",
+  "homepage": "https://github.com/AleksandarDukic/sketchy-drawer#readme",
+  "bugs": {
+    "url": "https://github.com/AleksandarDukic/sketchy-drawer/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AleksandarDukic/sketchy-drawer.git"
+  },
+  "license": "MIT",
+  "author": "Aleksandar Dukic",
+  "type": "module",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsdown",
+    "dev": "tsdown --watch",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit",
+    "release": "bumpp",
+    "prepublishOnly": "pnpm run build"
+  },
+  "devDependencies": {
+    "tsdown": "^0.22.14",
+    "typescript": "^7.0.2",
+    "vitest": "^4.1.12"
+  },
+  "exports": {
+    ".": "./dist/index.mjs",
+    "./package.json": "./package.json"
+  }
+}

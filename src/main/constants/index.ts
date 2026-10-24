@@ -1,0 +1,7 @@
+export const POINT_RADIUS_ROUGHNESS = 7.5;
+export const POINT_ANGLE_ROUGHNESS = 2 * Math.PI;
+export const PERTURBED_POINT_ROUGNESS = 0.005;
+export const DEVIANT_POINT_LOCATION_AREA = {
+    START: 40,
+    END: 60
+}
