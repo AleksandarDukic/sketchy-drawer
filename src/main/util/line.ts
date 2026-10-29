@@ -1,15 +1,22 @@
 import { DEVIANT_POINT_LOCATION_AREA, PERTURBED_POINT_ROUGNESS, POINT_RADIUS_ROUGHNESS } from "../constants";
 import type { Position } from "../models";
-import { addPoints } from "./point";
 
+/** Given a straight line's start and end position
+ *  calculate it's length
+ *  @return number - length of the line.
+ */
 export function calcLineLength(start: Position, end: Position) {
-    let a = Math.abs(start.x - end.x);
-    let b = Math.abs(start.y - end.y);
+    let cathetusX = Math.abs(start.x - end.x);
+    let cathetusY = Math.abs(start.y - end.y);
 
-    let c = Math.sqrt(a*a + b*b);
-    return c;
+    let hypotenuse = Math.sqrt(cathetusX ** 2 + cathetusY ** 2);
+    return hypotenuse;
 }
 
+/** Given a straight line's start and end position
+ *  calculate it's mid-point
+ *  @return {x: number, y: number} - Position of the line
+ */
 export function calcLineMidPoint(start: Position, end: Position): Position {
     return { x: (start.x + end.x) / 2, y: (start.y + end.y)/2 } 
 }
@@ -60,9 +67,9 @@ export function calculatePerturbedPoint(start: Position, midPoint: Position): Po
 /** Given a line Ending Point and Mid Point calculates a Deviant Point
  *  @return Pertubered Point
  */
-export function calculateDeviantPoint(midPoint: Position, end: Position): Position {
-    return {x: 0, y: 0};
-}
+// export function calculateDeviantPoint(midPoint: Position, end: Position): Position {
+//     return {x: 0, y: 0};
+// }
 
 
 /** Given a line Ending Point and Mid Point calculates a Deviant Point location

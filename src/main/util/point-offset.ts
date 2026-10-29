@@ -13,3 +13,7 @@ export function calcOffsetPoint(point: Position): Position {
         y: point.y + noiseY
     }
 }
+
+export function calcOffsetPoints(...points: Position[]): Position[] {
+    return points.map(point => calcOffsetPoint(point))
+}

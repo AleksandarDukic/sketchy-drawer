@@ -1,4 +1,5 @@
 import type { Position } from "../../../models/position.interface";
+import { canvasUtil } from "../../../util/canvas";
 import { calcLineMidPoint } from "../../../util/line";
 import type { Line } from "./line.interface";
 
@@ -9,6 +10,7 @@ export function createLine(start: Position, end: Position): Line {
         start: start,
         end: end,
         path,
+        //getOrthogonal: () => {return {}},
         draw: drawLine
     };
 };
@@ -20,12 +22,7 @@ function drawLine(this: Line, ctx: CanvasRenderingContext2D) {
 
 function drawMidPoint(ctx: CanvasRenderingContext2D, start: Position, end: Position) {
     const midPoint = calcLineMidPoint(start, end);
-    ctx.save();
-    ctx.beginPath();
-    ctx.arc(midPoint.x, midPoint.y, 3, 0, Math.PI * 2, true);
-    ctx.fillStyle = "red";
-    ctx.fill();
-    ctx.restore();
+    canvasUtil.drawControlPoint(ctx, canvasUtil.createControlPoint(midPoint));
 }
 
 function createLinePath(start: Position, end: Position): Path2D {

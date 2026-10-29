@@ -1,9 +1,9 @@
 import type { Position } from "../../../../models";
 import { calculatePerturbedPoints, calcLineMidPoint, calculateDeviantPointLocation } from "../../../../util/line";
-import { calcOffsetPoint } from "../../../../util/point-offset";
+import { calcOffsetPoints } from "../../../../util/point-offset";
 import type { SketchyLine } from "./sketchy-line.interface";
 
-export function createSketchyLine(start: Position, end: Position): SketchyLine {
+export function createSketchyLine(start: Position, end: Position): SketchyLine  {
     const path = createSketchyLinePath(start, end);
 
     return {
@@ -15,15 +15,14 @@ export function createSketchyLine(start: Position, end: Position): SketchyLine {
 }
 
 function drawLine(this: SketchyLine ,ctx: CanvasRenderingContext2D) {
-    //ctx.fill(this.path);
     ctx.stroke(this.path);
 }
 
 
 
 function createSketchyLinePath(start: Position, end: Position): Path2D {
-    const calcStart = calcOffsetPoint(start);
-    const calcEnd = calcOffsetPoint(end);
+
+    const [calcStart, calcEnd] = calcOffsetPoints(start, end);
     const midPoint = calcLineMidPoint(start, end);
 
     const perturbedPoints: Position[] = calculatePerturbedPoints(start, midPoint);
