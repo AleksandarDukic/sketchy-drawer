@@ -81,22 +81,22 @@ export function calculateDeviantPointLocation(midPoint: Position, end: Position)
 
     // lenght of input parameters' line
     const halfLineLength = calcLineLength(midPoint, end);
-    console.log(halfLineLength);
+   // console.log(halfLineLength);
 
     // 40% - 60% of half-line (input line)
     const percentageOffset = DEVIANT_POINT_LOCATION_AREA.END - DEVIANT_POINT_LOCATION_AREA.START;
 
     // random number betwee 40% and 60%
     const deviantPointPercentageOffset = DEVIANT_POINT_LOCATION_AREA.START + Math.random() * percentageOffset;
-    console.log("% :", deviantPointPercentageOffset);
+    //console.log("% :", deviantPointPercentageOffset);
 
     // Perpendicular Distance of Deviation Point from Line
     const deviantPointDistancOffset = POINT_RADIUS_ROUGHNESS * Math.random();
-    console.log("r :", deviantPointDistancOffset);
+   // console.log("r :", deviantPointDistancOffset);
     const sign = Math.random() >= 0.5 ? 1 : -1;
 
     const deviantPointDistance = halfLineLength * deviantPointPercentageOffset / 100;
-    console.log("deviant Point Projection Distance", deviantPointDistance)
+    //console.log("deviant Point Projection Distance", deviantPointDistance)
 
     const cathetusX = end.x - midPoint.x;
     const cathetusY = end.y - midPoint.y;
@@ -105,12 +105,12 @@ export function calculateDeviantPointLocation(midPoint: Position, end: Position)
         x: midPoint.x + cathetusX * deviantPointDistance / halfLineLength,
         y: midPoint.y +  cathetusY * deviantPointDistance / halfLineLength,
     }
-    console.log("Point : ",deviantPointProjectionPosition)
+    //console.log("Point : ",deviantPointProjectionPosition)
 
 
     const deltaX = cathetusY * deviantPointDistancOffset / halfLineLength;
     const deltaY = cathetusX * deviantPointDistancOffset / halfLineLength;
-    console.log("Δ:",deltaX, deltaY);
+    //console.log("Δ:",deltaX, deltaY);
     console.log("\n")
     console.log("\n")
 
