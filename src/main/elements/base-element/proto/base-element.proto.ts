@@ -1,10 +1,10 @@
-import type { Geometry } from "../../../geometry/geometry.interface";
-import { createPath } from "./functions/path.factory";
+import type { BaseElement } from "../base-element.interface";
 
 export type ProtoBaseElement = {
-    createPath: <TGeometry extends Geometry>(geometry: TGeometry) => Path2D;
-}
-
-export const protoBaseElement: ProtoBaseElement = {
-    createPath: createPath
+    addOverlayElement: (element: BaseElement) => void;
+    addUnderlayElement: (element: BaseElement) => void
+    // removeOverlayElement(??? id ???)
+    // removeUnderlayElement(??? id ???)
+    // 
+    
 }

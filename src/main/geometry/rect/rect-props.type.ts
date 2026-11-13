@@ -1,4 +1,4 @@
-import type { PointGeometry } from "../Point/point-props.type"
+/* import type { PointGeometry } from "../Point/point-props"
 
 export type RectGeometry = {
     A: PointGeometry,
@@ -6,3 +6,4 @@ export type RectGeometry = {
     C: PointGeometry,
     D: PointGeometry
 }
+ */

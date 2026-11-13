@@ -1,5 +1,5 @@
-import { createPoint } from "../Point/point-props.factory";
-import type { PointGeometry } from "../Point/point-props.type";
+/* import { createPoint } from "../Point/point-factory";
+import type { PointGeometry } from "../Point/point-props";
 import type { RectGeometry } from "./rect-props.type";
 
 
@@ -25,3 +25,4 @@ export function createRectPolar(A: PointGeometry, a: number, b: number, tetha: n
         D
     };
 };
+ */

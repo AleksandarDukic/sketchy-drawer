@@ -1,5 +1,5 @@
-import { createPoint } from "../Point/point-props.factory";
-import type { PointGeometry } from "../Point/point-props.type";
+/* import { createPoint } from "../Point/point-factory";
+import type { PointGeometry } from "../Point/point-props";
 import type { TriangleGeometry } from "./triangle-props.type";
 
 
@@ -26,3 +26,4 @@ export function createTrianglePolar(A: PointGeometry, a: number, b: number, c: n
         C,
     };
 };
+ */

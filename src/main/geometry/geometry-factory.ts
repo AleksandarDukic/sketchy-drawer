@@ -1,5 +1,5 @@
-import { createLineDec, createLineRad } from "./Line/line-props.factory";
-import { createPoint } from "./Point/point-props.factory";
+/* import { createLineDec, createLineRad } from "./Line/line-factory";
+import { createPoint } from "./Point/point-factory";
 import { createRectDec, createRectPolar } from "./Rect/rect-props.factory";
 import { createTriangleDec, createTrianglePolar } from "./Triangle/triangle-props.factory";
 
@@ -12,4 +12,4 @@ export const geometryFactory = {
     createRectPolar: createRectPolar,
     createTrianlgeDec: createTriangleDec,
     createTrianlgePolar: createTrianglePolar
-}
+} */

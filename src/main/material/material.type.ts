@@ -3,9 +3,9 @@ export type Material = {
     color: string
 }
 
-export const _Matter = {
+export const Matter = {
     Stroke: "Stroke",
     Fill: "Fill"
 } as const;
 
-export type Matter = typeof _Matter[keyof typeof _Matter]
+export type Matter = typeof Matter[keyof typeof Matter]
