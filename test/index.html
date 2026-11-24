@@ -15,36 +15,54 @@
 <body>
     <canvas id="canvas" width="800" height="800"></canvas>
     <script type="module" src="./index.js"></script>
-        <script>
-        let canvas = document.getElementById("canvas");
-        let ctx = canvas.getContext("2d");
-        // Define your organic shape
-        ctx.beginPath();
-        ctx.moveTo(200, 100);
-        ctx.bezierCurveTo(350, 50, 400, 250, 250, 350);
-        ctx.bezierCurveTo(100, 400, 50, 200, 200, 100);
-        ctx.closePath();
+    <script>
+        // let canvas = document.getElementById("canvas");
+        // let ctx = canvas.getContext("2d");
+        // // Define your organic shape
+        // const shape = new Path2D();
 
-        // Restrict drawing to the shape
-        ctx.save();
-        ctx.clip();
+        // shape.moveTo(200, 100);
+        // shape.bezierCurveTo(350, 50, 400, 250, 250, 350);
+        // shape.bezierCurveTo(100, 400, 50, 200, 200, 100);
+        // shape.closePath();
 
-        // Draw random paint strokes
-        for (let i = 0; i < 1000; i++) {
-            const x = Math.random() * 400;
-            const y = Math.random() * 400;
+        // ctx.stroke(shape);
+        // ctx.save();
 
-            ctx.strokeStyle = "rgba(30, 80, 180, 0.15)";
-            ctx.lineWidth = 2 + Math.random() * 8;
+        // ctx.clip(shape);
 
-            ctx.beginPath();
-            ctx.moveTo(x, y);
-            ctx.lineTo(x + Math.random() * 200, y + Math.random() * 10);
-            ctx.stroke();
-        }
+        // for (let i = 0; i < 1000; i++) {
+        //     const x = Math.random() * 400;
+        //     const y = Math.random() * 400;
 
-        ctx.restore();
+        //     ctx.strokeStyle = "rgba(30, 80, 180, 0.15)";
+        //     ctx.lineWidth = 2 + Math.random() * 8;
+        //     const path = new Path2D()
+        //     path.moveTo(x, y);
+        //     path.lineTo(x + Math.random() * 20, y + Math.random() * 10);
+        //     ctx.stroke(path);
+        // }
+
+
+        // ctx.restore();
+        // ctx.arc(50, 50, 1, 0,  Math.PI * 2);
+        // ctx.lineWidth = 0;
+        // ctx.fillStyle = "red";
+        // ctx.fill();
+
     </script>
 </body>
 
 </html>
+
+//
+Mogu da napravim Path2D konturu slike programaticki na osnovu geometrije
+Mogu da klipuje to
+Moguda napravim Path2D materijala slike programaticki i dodam
+Pravljenje ove dve stvari je pre rendera
+Render samo treba da:
+- nacrta prvi Path2D - kontru
+- save-uje (ako ima materijala)
+- clip-uje (ako ima materijala)
+- nacrta materijal (ako ima materijala)
+- restore-uje (ako ima materijala)
